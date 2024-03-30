@@ -1,0 +1,91 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease;
+}
+
+body:hover {
+    background-color: #ffcc66; /* New background color on hover */
+}
+
+.avatar1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/564x/33/bf/d4/33bfd4fe246c996991c0cc785422f7fc.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 250px;
+}
+
+.avatar1::before,
+.avatar1::after {
+    --scale: 0;
+    position: absolute;
+    top: -.35rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+    transition: 180ms transform;
+    transform-origin: bottom center;
+}
+
+.avatar1::before {
+    content: attr(data-tooltip);
+    color: white;
+    padding: .5rem;
+    border-radius: .3rem;
+    text-align: center;
+    width: max-content;
+    max-width: 100%;
+    background: #333;
+}
+
+.avatar1:hover::before {
+    --scale: 1;
+}
+
+.avatar2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/564x/84/7f/e9/847fe98af13d049a78bf28738ea6e166.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 250px;
+}
+
+.avatar2::before,
+.avatar2::after {
+    --scale: 0;
+    position: absolute;
+    top: -.35rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+    transition: 180ms transform;
+    transform-origin: bottom center;
+}
+
+.avatar2::before {
+    content: attr(data-tooltip);
+    color: white;
+    padding: .5rem;
+    border-radius: .3rem;
+    text-align: center;
+    width: max-content;
+    max-width: 100%;
+    background: #333;
+}
+
+.avatar2:hover::before {
+    --scale: 1;
+}
